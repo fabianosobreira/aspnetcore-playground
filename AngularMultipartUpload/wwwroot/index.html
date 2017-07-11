@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>A simple file upload playground using AngularJS 1.x and ASP.NET Core</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app" class="container" ng-cloak>
+        <form id="fileUploadForm" name="fileUploadForm" ng-submit="submitFiles()" ng-controller="appController">
+            <fieldset>
+                <legend>A simple file upload playground using AngularJS and ASP.NET Core</legend>
+                <div class="form-group">
+                    <input type="file" id="fileInput" name="fileInput" class="input-file" multiple required 
+                           file-model="files">
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="submit" name="submit" class="btn btn-default" value="Submit">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script>
+        angular.bootstrap(document.getElementById('app'), ['app']);
+    </script>
+</body>
+</html>
