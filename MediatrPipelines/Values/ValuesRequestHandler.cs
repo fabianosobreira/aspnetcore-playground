@@ -19,10 +19,10 @@ namespace Playground.MediatrPipelines
             _logger.LogInformation("IRequestHandler handles the request.");
 
             // Allways a failure.
-            var failures = new ValidationFailure[] { new ValidationFailure(nameof(ValuesRequestHandler), "ooooppps...") };
-            throw new ValidationException(failures);
+            //var failures = new ValidationFailure[] { new ValidationFailure(nameof(ValuesRequestHandler), "ooooppps...") };
+            //throw new ValidationException(failures);
 
-            //return new string[] { "value-1", "value-2", };
+            return new string[] { "value-1", "value-2", };
         }
     }
 }

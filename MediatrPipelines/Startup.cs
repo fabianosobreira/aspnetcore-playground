@@ -3,7 +3,7 @@ using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation.AspNetCore;
+using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
@@ -31,17 +31,24 @@ namespace Playground.MediatrPipelines
                 .AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>))
                 .AddTransient(typeof(IPipelineBehavior<,>), typeof(SomePipelineBehavior<,>));
 
+            // Register all validators. Remove if using FluentValidation in model binding.
+            AssemblyScanner.FindValidatorsInAssemblyContaining<Startup>()
+                .ForEach(result => services.AddTransient(result.InterfaceType, result.ValidatorType));
+
             services
                 .AddMvcCore(config =>
                 {
                     config.Filters.Add(typeof(ValidationExceptionAttribute));
                     config.Filters.Add(typeof(ModelStateValidationAttribute));
                 })
-                .AddJsonFormatters()
-                .AddFluentValidation(config =>
-                {
-                    config.RegisterValidatorsFromAssemblyContaining(typeof(SomeRequestPreProcessor<>));
-                });
+            // Unccoment to enable DataAnnotations validation in model binding.
+            //    .AddDataAnnotations()
+                .AddJsonFormatters();
+            // Unccoment to enable FluentValidation in model binding (not desirable in most cases).
+            //    .AddFluentValidation(config =>
+            //    {
+            //        config.RegisterValidatorsFromAssemblyContaining(typeof(Startup));
+            //    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
