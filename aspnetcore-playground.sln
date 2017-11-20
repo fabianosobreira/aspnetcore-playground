@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatrPipelines", "MediatrPipelines\MediatrPipelines.csproj", "{F4F453C9-4399-41C3-900A-912E969CBD8F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularMultipartUpload", "AngularMultipartUpload\AngularMultipartUpload.csproj", "{4EC55E34-DA8E-4171-8D5A-56FC8EA11C7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomIdentityStores", "CustomIdentityStores\CustomIdentityStores.csproj", "{666B58B5-AC8C-44B4-9FDD-B5DF166BB3C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{4EC55E34-DA8E-4171-8D5A-56FC8EA11C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EC55E34-DA8E-4171-8D5A-56FC8EA11C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EC55E34-DA8E-4171-8D5A-56FC8EA11C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666B58B5-AC8C-44B4-9FDD-B5DF166BB3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666B58B5-AC8C-44B4-9FDD-B5DF166BB3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666B58B5-AC8C-44B4-9FDD-B5DF166BB3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666B58B5-AC8C-44B4-9FDD-B5DF166BB3C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABAD1C76-3F05-4C58-B209-11290AD32493}
 	EndGlobalSection
 EndGlobal
